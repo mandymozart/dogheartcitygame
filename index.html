@@ -26,7 +26,7 @@
 	<meta property="og:url" content="http://dogheartcity.rogerrobinsononline.com" />
 	<meta property="og:type" content="game" />
 	<meta property="og:title" content="Dog Heart City Game" />
-	<meta property="og:description" content="A man struggles. Beat the highscore" />
+	<meta property="og:description" content="Beat my score!" />
 	<meta property="og:image" content="http://dogheartcity.rogerrobinsononline.com/img/dogheartcity-game-teaser.jpg" />
 
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -72,7 +72,7 @@
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
-			js.src = "//connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v2.8&appId=1757578477803225";
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1757578477803225";
 			fjs.parentNode.insertBefore(js, fjs);
 		} (document, 'script', 'facebook-jssdk'));</script>
 
@@ -86,8 +86,8 @@
 
 
 	<div id="tweet" class="social">
-		<a href="https://twitter.com/share" class="twitter-share-button" data-text="Dog Heart City GAME - Roger Robinson" data-via="rogerrobinsononline"
-			data-hashtags="dogheartcity,dogheartcitygame">Tweet</a>
+		<a href="https://twitter.com/share" class="twitter-share-button" data-text="I just played Dog Heart City! Beat my score!"
+			data-via="rrobinson72" data-hashtags="dogheartcity">Tweet</a>
 		<script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");</script>
 </div>
 
@@ -109,14 +109,17 @@
 <div class="slide-out" id="credits">
 	<div class="preface"></div>
 	<div class="slide-out-content">
-		<img src="/img/game-cover.png" id="credits-game-cover" alt="Dog Heart City GAME" />
-		<p>
-			Idea: Roger Robinson &amp; Mandy Mozart <br /> Music: "Shine" - Roger Robinson, Disrupt<br /> (<a href="https://jahtari.bandcamp.com/album/dog-heart-city" target="_blank">Jahtari Tape "Dog Heart
+		<div>
+			<img src="/img/game-cover.png" id="credits-game-cover" alt="Dog Heart City GAME" />
+			<p>
+				Idea: Roger Robinson &amp; Mandy Mozart <br /> Music: "Shine" - Roger Robinson, Disrupt<br /> (<a href="https://jahtari.bandcamp.com/album/dog-heart-city"
+					target="_blank">Jahtari Tape "Dog Heart
 			City"</a>)<br /> Production: <a href="http://www.wearepictures.com" target="_blank">WEAREPICTURES</a><br /> Code Support:
-			<a href="http://www.shalomsalon.de" target="_blank">Shalom Salon</a><br /> &copy; 2017
-		</p>
-		<img src="/img/sponsors-logos.png" alt="Sponsors" /><br />
-		<p>Report/Support: <a href="mailto:dogheartycity@shalomsalon.de">dogheartcity@shalomsalon.de</a></p>
+				<a href="http://www.shalomsalon.de" target="_blank">Shalom Salon</a><br /> &copy; 2017
+			</p>
+			<img src="/img/sponsors-logos.png" alt="Sponsors" /><br />
+			<p>Report/Support: <a href="mailto:dogheartycity@shalomsalon.de">dogheartcity@shalomsalon.de</a></p>
+		</div>
 	</div>
 </div>
 
@@ -124,10 +127,9 @@
 	<div class="preface"></div>
 	<div class="slide-out-content">
 		<h2>WOW, <span id="submit-score"></span> POINTS!</h2>
-		<p>Congratulations, your score ranked among the top 5 Dog Heart City highscores! If you manage to stay there until
-			<span
-				class="date">1st of March</span>, you will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave your nickname and
-				email (only for us, not publicly visible) and we'll get back to you.</p>
+		<p><span id="submit-message"></span> Those of you that manage to stay in the highscores until
+			<span class="date">1st of March</span>, you will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave
+			your nickname and email (only for us, not publicly visible) and we'll get back to you.</p>
 		<div class="form" id="submit-form">
 			<p class="error-messages"></p>
 			<h3>Your basics</h3>

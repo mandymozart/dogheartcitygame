@@ -47,13 +47,17 @@ audio:not([controls]) {
 
 html {
   font-size: 100%;
-  overflow-y: scroll;
+  overflow: hidden;
+    height: 100vh;
+  width: 100vw;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  height: 100vh;
+  width: 100vw;
   font-size: 13px;
   line-height: 1.231;
 }
@@ -674,7 +678,7 @@ padding: 0 1.1rem;
 
 /* Credits */
 
-#credits #credits-game-cover {
+#credits-game-cover {
   width: 398px;
   height: 398px;
 }
@@ -808,12 +812,24 @@ padding: 0 1.1rem;
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
-}
-
-@media only screen and (min-width: 768px) {
-  /* Style adjustments for viewports 768px and over go here */
+/* Portrait */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) { 
+    .slide-out img,
+    #credits-game-cover {
+      width: 100%;
+      height: auto;
+    }
+    #credits p {
+      width: 100%;
+    }
+    #highscores thead h2 {
+      max-width: 100% !important;
+      line-height: 0;
+  }
 }
 
 

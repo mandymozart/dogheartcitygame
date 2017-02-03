@@ -13,11 +13,11 @@ GAME.Highscores.prototype.render = function(){
 
 	// API.scores.reverse() somehow shuffles order
 	// var scoresReversed = [API.scores[4],API.scores[3],API.scores[2],API.scores[1],API.scores[0]]
-	i = 0;
+	i = 6;
 
 
 	$.each(API.scores, function(k,score){
-		i++;
+		i--;
 		scoresTable.prepend('<tr><td>#'+i+'</td><td>'+score.score+'</td><td>'+score.name+'</td></tr>');
 	})
 
@@ -42,26 +42,16 @@ GAME.Highscores.prototype.show = function () {
 
 	console.log('Highscores::show')
 	
-	var ranked = false;
-
-	$.each(API.scores, function(key, score){
-		console.log(score.score);
-		if(score.score < gameScreen.score) {
-			ranked = true;
-			
-		} 
-	})
-
 	// Check if 5th position of high score list is smaller than gameScreen score of current user
-	if (ranked) {
-		$('#submit-score').text(gameScreen.score);
-		$('#highscores .message').text('Congratulations '+scoreObject.name+', you made it in the highscores.')
-		console.log('Highscores::Congratulations, you ranked in the highscores top 5! Hurray!');
+	$('#submit-score').text(gameScreen.score-400);
+	// Ranked or not messages
+	if (this.ranked()) {
+		$('#submit-message').text('Congratulations, your score ranked among the top 5 Dog Heart City highscores!')
 	} else {
-		$('#submit-score').text(gameScreen.score);
-		$('#highscores .message').text('Sorry, no awards for such a low performance! Try again! You can still enter your details to receive Jahtari mailings.')
-		console.log('Highscores::Sorry, no awards for such a low performance! Try again!')
+		$('#submit-message').text('Sorry, no awards! You should try again or stay in touch!')
 	}
+
+		
 	/* We will need to go through jQuery here to get user input via the slide out. */
 	// Update score
 	// Display slide-out
@@ -100,7 +90,7 @@ GAME.Highscores.prototype.show = function () {
 			$('#submit-name').removeClass('has-errors');
 			// Prepare Score Object to submit internally
 			var scoreObject = {};
-			scoreObject.score = gameScreen.score;
+			scoreObject.score = gameScreen.score-400;
 			scoreObject.name = name;
 			scoreObject.email = email;
 			scoreObject.facebook = (facebook === undefined) ? '' : facebook;
@@ -120,14 +110,30 @@ GAME.Highscores.prototype.show = function () {
 
 }
 
+GAME.Highscores.prototype.ranked = function (){
+	var ranked = false;
+	$.each(API.scores, function(key, score){
+		if(score.score < gameScreen.score-400) {
+			ranked = true;
+		} 
+	})
+	return ranked;
+}
 
 GAME.Highscores.prototype.saveScore = function (scoreObject) {
 	API.saveScore(scoreObject)
 
+	// Rerender Highscore List (Faulty two way binding workaround)
 	this.render();
 
+	// Ranked or not messages
+	if (this.ranked()) {
+		$('#highscores .message').text('Congratulations '+scoreObject.name+', you made it in the highscores.')
+	} else {
+		$('#highscores .message').text('Sorry, no awards for such a low performance! Try again! You can still enter your details to receive Jahtari mailings.')
+	}
 	// TODO: double check if user is still in highscore while others submit new scores
-	$('#highscores .message').text('Congratulations '+scoreObject.name+', you made it in the highscores.')
+
 	// Prevent player from submitting same score (get's cancelled on restart)
 	GAME.alreadySubmitted = true;
 	// Close submit slide out

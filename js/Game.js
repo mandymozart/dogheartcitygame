@@ -288,6 +288,7 @@ GAME.Game.prototype.update = function()
 	
 //	 console.log(Math.sin(Math.PI/2));
 	this.scoreView.setScore(this.score);
+	console.log(this.score)
 	this.lifeBar.bar.scale.x = (this.life / 100) * 0.92;
 	
 	//

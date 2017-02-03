@@ -1,11 +1,3 @@
-/**
- * @author Mat Groves
- */
-
-/**
- * @author Mat Groves
- */
-
 var GAME = GAME || {};
 
 GAME.Score = function()
@@ -24,8 +16,7 @@ GAME.Score = function()
 			6:"no0006.png",
 			7:"no0007.png",
 			8:"no0008.png",
-			9:"no0009.png"//,
-			//",":"number_comma.png"
+			9:"no0009.png"
 	}
 	
 	for(i in this.glyphs)this.glyphs[i] = PIXI.Texture.fromFrame(this.glyphs[i]);
@@ -50,6 +41,7 @@ GAME.Score.prototype.setScore = function(score)
 	var split = formatScore(score).split("");
 	var position = 0;
 	var gap = 10;
+	// Score
 	for ( var i = 0; i < split.length; i++) 
 	{
 		var digit = this.digits[i];
@@ -68,25 +60,17 @@ GAME.Score.prototype.setScore = function(score)
 	{
 		this.digits[i].visible = false;
 	}
+
+	// Let User know he leads
+	// if(API.scores[0].score < score)
+	// $('body').addClass('new-highscore')
+
 }
 
 GAME.Score.prototype.jump = function()
 {
 	this.ratio = 2.2;
 }
-/*
-GAME.Score.prototype.updateTransform = function()
-{
-	PIXI.DisplayObjectContainer.prototype.updateTransform.call( this );
-	
-	this.ratio += (1 - this.ratio) * 0.3;
-	
-	for ( var i = 0; i < this.digits.length; i++) 
-	{
-		this.digits[i].scale.x = this.ratio;
-		this.digits[i].scale.y = this.ratio;
-	}
-}*/
 
 function formatScore(n)
 {

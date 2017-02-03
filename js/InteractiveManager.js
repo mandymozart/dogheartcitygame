@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 var interactiveItems
 
 var Interactive = function ()

@@ -346,7 +346,6 @@ GAME.Enemy.prototype.pushAway = function()
 	this.zSpeed = -7
 	this.scale.x = (this.throwSpeed.x < 0) ? -1 : 1;
 	
-	
 }
 
 
@@ -406,7 +405,8 @@ GAME.Enemy.prototype.mouseup = function(mouse)
 	{
 		
 	}
-	
+		
+	GAME.siren.play();
 	if(this.realPosition.y < 300)
 	{
 		var diff = this.realPosition.y - 300;

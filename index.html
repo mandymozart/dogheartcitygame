@@ -25,8 +25,8 @@
 
 	<meta property="og:url" content="http://dogheartcity.rogerrobinsononline.com" />
 	<meta property="og:type" content="game" />
-	<meta property="og:title" content="Dog Heart City Game - Roger Robinson" />
-	<meta property="og:description" content="A challange to life in London and win amazing Jahtari goodies!" />
+	<meta property="og:title" content="Dog Heart City Game" />
+	<meta property="og:description" content="A man struggles. Beat the highscore" />
 	<meta property="og:image" content="http://dogheartcity.rogerrobinsononline.com/img/dogheartcity-game-teaser.jpg" />
 
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
@@ -111,11 +111,9 @@
 	<div class="slide-out-content">
 		<img src="/img/game-cover.png" id="credits-game-cover" alt="Dog Heart City GAME" />
 		<p>
-			Idea: Roger Robinson &amp; Mandy Mozart <br />
-			Music: "Shine" - Roger Robinson, Disrupt<br /> (Jahtari Tape "Dog Heart City")<br />
-			Production: <a href="http://www.wearepictures.com" target="_blank">WEAREPICTURES</a><br />
-			Code Support: <a href="http://www.shalomsalon.de" target="_blank">Shalom Salon</a><br />
-			&copy; 2017
+			Idea: Roger Robinson &amp; Mandy Mozart <br /> Music: "Shine" - Roger Robinson, Disrupt<br /> (<a href="https://jahtari.bandcamp.com/album/dog-heart-city" target="_blank">Jahtari Tape "Dog Heart
+			City"</a>)<br /> Production: <a href="http://www.wearepictures.com" target="_blank">WEAREPICTURES</a><br /> Code Support:
+			<a href="http://www.shalomsalon.de" target="_blank">Shalom Salon</a><br /> &copy; 2017
 		</p>
 		<img src="/img/sponsors-logos.png" alt="Sponsors" /><br />
 		<p>Report/Support: <a href="mailto:dogheartycity@shalomsalon.de">dogheartcity@shalomsalon.de</a></p>
@@ -125,10 +123,11 @@
 <div class="slide-out" id="submit">
 	<div class="preface"></div>
 	<div class="slide-out-content">
-		<h2>WOW, <span id="submit-score"></span> PAR!</h2>
-		<p>Congratulations, you qualified in our exclusive worldwide Jahtari Dog Heart City highscores. If you manage to stay amongst
-			the first 5 at till the <span class="date">1st of March</span>, we will reward you with some of the most amazing goodies.
-			Just leave your nickname and email (<span>only for us, not publically visible</span>) and we get back to you.</p>
+		<h2>WOW, <span id="submit-score"></span> POINTS!</h2>
+		<p>Congratulations, your score ranked among the top 5 Dog Heart City highscores! If you manage to stay there until
+			<span
+				class="date">1st of March</span>, you will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave your nickname and
+				email (only for us, not publicly visible) and we'll get back to you.</p>
 		<div class="form" id="submit-form">
 			<p class="error-messages"></p>
 			<h3>Your basics</h3>
@@ -143,7 +142,7 @@
 				<input type="text" id="submit-instagram" name="instagram" placeholder="(Your Instagram)" />
 			</p>
 			<p><button id="submit-button"><img src="img/submit.png" alt="Submit" /></button></p>
-			<p><button id="submit-cancel">Nah, I just played for fun! Take me back!</button></p>
+			<p><button id="submit-cancel">Nah, I just play for fun! Take me back!</button></p>
 		</div>
 	</div>
 </div>
@@ -156,12 +155,15 @@
 			<thead>
 				<tr>
 					<th colspan="3">
-						<h2>Highscores</h2>
+						<h2>HIGHSCORES</h2>
 						<p class="message"></p>
 					</th>
 				</tr>
 			</thead>
 			<tbody id="scores-table">
+				<tr>
+					<td colspan="3"><img src="/img/loader.svg" width="70" height="70" /><br />Loading</td>
+				</tr>
 			</tbody>
 		</table>
 		<p>Can't find your name? GO GO GO! You have until <span class="date">1st of March</span> to improve your score and win one
@@ -175,8 +177,8 @@
 </div>
 <!--! end of #container -->
 <div id="info">
-	<a href="#/credits" id="credits-link">CREDITS</a>
-	<a href="#/highscores" id="highscores-link">HIGHSCORES</a>
+	<a href="#/credits" id="credits-link">i</a>
+	<a href="#/highscores" id="highscores-link"><span id="highscore"><img src="/img/loader.svg" width="32" height="32" /></span></a>
 </div>
 
 <audio style="position: absolute" id="music" loop>

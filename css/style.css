@@ -88,19 +88,20 @@ body, button, input, select, textarea {
    ========================================================================== */
 
 a {
-  color: #00e;
+  color: white;
+  text-decoration: none;
 }
 
 a:visited {
-  color: #551a8b;
+  color: white;
 }
 
 a:hover {
-  color: #06e;
+  color: #f1c867;;
 }
 
 a:focus {
-  outline: thin dotted;
+  outline: none;
 }
 
 
@@ -501,24 +502,42 @@ td {
 
 #info {
   position: fixed;
-  top: 3.5vh;
+  top: 4vh;
   right: 3vw;
   background: none;
-  font-size: 26px;
+  font-size: 2rem;
   font-family: 'Shadows Into Light Two';
   display: flex;
   flex-direction: row-reverse;
 }
 
 #info a {
-  flex: 1;
   color: #FFFFFF;
   text-decoration: none;
 }
 
-#info a#credits-link {
-  text-align: right;
-  padding-left: 1rem;
+#credits-link {
+    text-align: right;
+    background: #f5c855;
+    border-radius: 3rem;
+padding: 0 1.1rem;
+    margin-left: .75rem;
+}
+
+#credits-link:hover {
+  color: #c1537b;
+}
+
+#highscores-link {
+  background: #c1537b;
+  border-radius: 1rem;
+  padding: 0 1.3rem;
+}
+#highscores-link:hover {
+  color: #f1c867;
+}
+#highscore img {
+    margin-top: -6px;
 }
 
 
@@ -649,11 +668,6 @@ td {
   font-size: 1.2rem;
 }
 
-.slide-out a {
-  color: #5F3088;
-  text-decoration: none;
-}
-
 .slide-out p, .slide-out h2, .slide-out table {
   max-width: 50rem;
 }
@@ -692,6 +706,31 @@ td {
   line-height: 10rem;
 }
 
+#save-csv-button {
+  display: flex;
+    position: fixed;
+    align-content: center;
+    top: 3rem;
+    right: 3rem;
+    left: 3rem;
+    bottom: 3rem;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: blanchedalmond;
+    font-size: 4rem;
+    cursor: pointer;
+    transition: all .1s linear;
+    color: #FF5722;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#save-csv-button:hover {
+  background: #FF5722;
+  color: #551a8b;
+}
 
 /* Submit Form */
 

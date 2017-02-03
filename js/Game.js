@@ -36,6 +36,9 @@ GAME.time = new Time();
 // Prevent player from submitting same score (get's cancelled on restart)
 GAME.alreadySubmitted = false;
 
+// Sounds
+GAME.siren = new Audio('audio/siren.mp3');
+
 GAME.Game = function()
 {
 	GAME.width = 1024;
@@ -105,6 +108,8 @@ GAME.Game = function()
 	this.white.scale.x = GAME.width / 10;
 	this.white.scale.y = GAME.height / 10;
 	
+
+
 	this.trees = [];
 	
 	// trees!

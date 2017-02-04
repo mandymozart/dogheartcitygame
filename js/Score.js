@@ -60,11 +60,6 @@ GAME.Score.prototype.setScore = function(score)
 	{
 		this.digits[i].visible = false;
 	}
-
-	// Let User know he leads
-	// if(API.scores[0].score < score)
-	// $('body').addClass('new-highscore')
-
 }
 
 GAME.Score.prototype.jump = function()

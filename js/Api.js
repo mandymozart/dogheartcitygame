@@ -13,6 +13,7 @@ var database = firebase.database();
 
 var API = {
     'scores' : [],
+    'highscore' : 0,
     // 'scores': [
     //     {
     //         'score': 0,
@@ -70,7 +71,7 @@ API.getScores = function () {
         if(i>4){ GAME.Highscores.prototype.render() }
 
     });
-
+    
 }
 
 API.saveScore = function (score) {

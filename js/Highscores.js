@@ -18,12 +18,12 @@ GAME.Highscores.prototype.render = function(){
 
 	$.each(API.scores, function(k,score){
 		i--;
+		if(i == 0) return false;
 		scoresTable.prepend('<tr><td>#'+i+'</td><td>'+score.score+'</td><td>'+score.name+'</td></tr>');
 	})
 
 	// Highscore to beat
 	$('#highscore').text(API.scores[4].score)
-
 }
 
 // helper
@@ -35,7 +35,9 @@ GAME.Highscores.prototype.validEmail = function(v) {
 
 GAME.Highscores.prototype.show = function () {
 	if(GAME.alreadySubmitted == true) {
-		alert('You just submitted this score! Play again to re-enter the competiton!');
+		$('#highscores .message').text('You just submitted this score! Play again to re-enter the competiton!')
+		$('body').removeClass('show-submit')
+		$('body').addClass('show-highscores')
 		console.warn('You just submitted this score. Play again to enter the competition!');
 		return;
 	}
@@ -126,11 +128,12 @@ GAME.Highscores.prototype.saveScore = function (scoreObject) {
 	// Rerender Highscore List (Faulty two way binding workaround)
 	this.render();
 
+	$('#highscore').text(API.scores[0]);
 	// Ranked or not messages
 	if (this.ranked()) {
 		$('#highscores .message').text('Congratulations '+scoreObject.name+', you made it in the highscores.')
 	} else {
-		$('#highscores .message').text('Sorry, no awards for such a low performance! Try again! You can still enter your details to receive Jahtari mailings.')
+		$('#highscores .message').text('Sorry, no awards for such a low performance! Try again!')
 	}
 	// TODO: double check if user is still in highscore while others submit new scores
 

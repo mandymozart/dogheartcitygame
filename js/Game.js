@@ -288,7 +288,9 @@ GAME.Game.prototype.update = function()
 	
 //	 console.log(Math.sin(Math.PI/2));
 	this.scoreView.setScore(this.score);
-	console.log(this.score)
+	if(API.scores[4].score < this.score) $('#new-highscore').fadeIn().delay( 5000 ).fadeOut()
+
+	// console.log(this.score)
 	this.lifeBar.bar.scale.x = (this.life / 100) * 0.92;
 	
 	//

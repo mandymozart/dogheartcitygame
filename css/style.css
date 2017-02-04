@@ -540,8 +540,21 @@ padding: 0 1.1rem;
 #highscores-link:hover {
   color: #f1c867;
 }
-#highscore img {
+#highscore img { /* Fix Loader */
     margin-top: -6px;
+}
+
+#new-highscore {
+    position: absolute;
+    display: none;
+    font-size: 1rem;
+    top: 3rem;
+    border-radius: 1rem;
+    text-align: center;
+    padding: .5rem 0;
+    background: #00BCD4;
+    width: 100%;
+    color: white;
 }
 
 

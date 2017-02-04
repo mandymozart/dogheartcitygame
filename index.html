@@ -23,11 +23,12 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
+	<meta property="fb:app_id" content="1827539334186395" />
 	<meta property="og:url" content="http://dogheartcity.rogerrobinsononline.com" />
 	<meta property="og:type" content="game" />
 	<meta property="og:title" content="Dog Heart City Game" />
 	<meta property="og:description" content="Beat my score!" />
-	<meta property="og:image" content="http://dogheartcity.rogerrobinsononline.com/img/dogheartcity-game-teaser.jpg" />
+	<meta property="og:image" content="http://dogheartcity.rogerrobinsononline.com/img/dogheartcity-game.jpg" />
 
 	<!-- Mobile viewport optimized: j.mp/bplateviewport -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -128,7 +129,7 @@
 	<div class="slide-out-content">
 		<h2>WOW, <span id="submit-score"></span> POINTS!</h2>
 		<p><span id="submit-message"></span> Those of you that manage to stay in the highscores until
-			<span class="date">1st of March</span>, you will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave
+			<span class="date">1st of March</span>, will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave
 			your nickname and email (only for us, not publicly visible) and we'll get back to you.</p>
 		<div class="form" id="submit-form">
 			<p class="error-messages"></p>
@@ -178,13 +179,16 @@
 </div>
 </div>
 <!--! end of #container -->
+<div id="message-center">
+</div>
 <div id="info">
 	<a href="#/credits" id="credits-link">i</a>
 	<a href="#/highscores" id="highscores-link"><span id="highscore"><img src="/img/loader.svg" width="32" height="32" /></span></a>
+	<span id="new-highscore">New Record!</span>
 </div>
 
 <audio style="position: absolute" id="music" loop>
-<source src="audio/RR_Shine.mp3">
+	<source src="audio/RR_Shine.mp3">
 </audio>
 <!-- JavaScript at the bottom for fast page loading -->
 
@@ -193,6 +197,7 @@
 <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
 <script src="https://www.gstatic.com/firebasejs/3.6.7/firebase.js"></script>
+<script src="js/libs/screenfull.js"></script>
 <script defer src="js/Api.js"></script>
 
 

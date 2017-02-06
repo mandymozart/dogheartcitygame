@@ -48,7 +48,7 @@ audio:not([controls]) {
 html {
   font-size: 100%;
   overflow: hidden;
-    height: 100vh;
+  height: 100vh;
   width: 100vw;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -101,7 +101,8 @@ a:visited {
 }
 
 a:hover {
-  color: #f1c867;;
+  color: #f1c867;
+  ;
 }
 
 a:focus {
@@ -293,7 +294,7 @@ label {
 
 legend {
   border: 0;
-  *margin-left: -7px;
+  margin-left: -7px;
   padding: 0;
 }
 
@@ -521,35 +522,37 @@ td {
 }
 
 #fullscreen-link {
-      z-index: 1000;
+  z-index: 1000;
   position: fixed;
-    bottom: .2rem;
-    right: .2rem;
-    display: none; /* only visible on mobile */
-    height: 32px;
+  bottom: .2rem;
+  right: .2rem;
+  display: none;
+  /* only visible on mobile */
+  height: 32px;
 }
 
 .fullscreen-toggle {
-  
-	display: inline-block;
-	height: 32px;
-	width: 32px;
-	background-image: url(../img/fullscreen_toogle.svg);
-	background-repeat: no-repeat;
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  background-image: url(../img/fullscreen_toogle.svg);
+  background-repeat: no-repeat;
 }
+
 .fullscreen-toggle {
-	background-position: 0px -32px;
+  background-position: 0px -32px;
 }
+
 .is-fullscreen .fullscreen-toggle {
-	background-position: 0px 0px;
+  background-position: 0px 0px;
 }
 
 #credits-link {
-    text-align: right;
-    background: #f5c855;
-    border-radius: 3rem;
-padding: 0 1.1rem;
-    margin-left: .75rem;
+  text-align: right;
+  background: #f5c855;
+  border-radius: 3rem;
+  padding: 0 1.1rem;
+  margin-left: .75rem;
 }
 
 #credits-link:hover {
@@ -561,27 +564,32 @@ padding: 0 1.1rem;
   border-radius: 1rem;
   padding: 0 1.3rem;
 }
+
 #highscores-link:hover {
   color: #f1c867;
 }
-#highscore img { /* Fix Loader */
-    margin-top: -6px;
+
+#highscore img {
+  /* Fix Loader */
+  margin-top: -6px;
 }
 
 #new-highscore {
-    position: absolute;
-    display: none;
-    font-size: 1rem;
-    top: 3rem;
-    border-radius: 1rem;
-    text-align: center;
-    padding: .5rem 0;
-    background: #00BCD4;
-    width: 100%;
-    color: white;
+  position: absolute;
+  display: none;
+  font-size: 1rem;
+  top: 3rem;
+  border-radius: 1rem;
+  text-align: center;
+  padding: .5rem 0;
+  background: #00BCD4;
+  width: 100%;
+  color: white;
 }
 
+
 /* Slide Outs */
+
 .slide-out {
   position: fixed;
   top: 0;
@@ -649,6 +657,7 @@ padding: 0 1.1rem;
   max-width: 50rem;
 }
 
+
 /* Credits */
 
 #credits-game-cover {
@@ -659,6 +668,7 @@ padding: 0 1.1rem;
 #credits p {
   width: 398px;
 }
+
 
 /* High Score Table */
 
@@ -685,29 +695,30 @@ padding: 0 1.1rem;
 
 #save-csv-button {
   display: flex;
-    position: fixed;
-    align-content: center;
-    top: 3rem;
-    right: 3rem;
-    left: 3rem;
-    bottom: 3rem;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    background: blanchedalmond;
-    font-size: 4rem;
-    cursor: pointer;
-    transition: all .1s linear;
-    color: #FF5722;
-    text-decoration: none;
-    font-weight: bold;
+  position: fixed;
+  align-content: center;
+  top: 3rem;
+  right: 3rem;
+  left: 3rem;
+  bottom: 3rem;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  background: blanchedalmond;
+  font-size: 4rem;
+  cursor: pointer;
+  transition: all .1s linear;
+  color: #FF5722;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 #save-csv-button:hover {
   background: #FF5722;
   color: #551a8b;
 }
+
 
 /* Submit Form */
 
@@ -721,6 +732,7 @@ padding: 0 1.1rem;
 
 
 /* Slide Out Functions */
+
 .show-credits #credits, .show-highscores #highscores, .show-submit #submit {
   transform: translateY(0);
   z-index: 1050;
@@ -755,29 +767,38 @@ padding: 0 1.1rem;
   color: #8a3ab9;
 }
 
+
 /* Overlays */
+
 .overlay {
   display: none;
 }
+
 .overlay-container {
   display: flex;
 }
+
+
 /* Gameover Overlay */
+
 #gameover-overlay {
-    position: fixed;
-    top: 67vh;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #987db3;
+  position: fixed;
+  top: 67vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #987db3;
 }
+
 #gameover-overlay img {
-   height: 31vh;
+  height: 31vh;
   margin: 1vh;
 }
+
 #gameover-overlay .gameover-lay-content {
   color: white;
 }
+
 
 /* Forms */
 
@@ -809,22 +830,20 @@ padding: 0 1.1rem;
    Modify as content requires.
    ========================================================================== */
 
+
 /* Portrait */
-@media only screen and (min-device-width: 375px) and (max-device-width: 768px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  /*and (orientation: portrait)*/
-  { 
-    .slide-out img,
-    #credits-game-cover {
-      width: 100%;
-      height: auto;
-    }
-    #credits p {
-      width: 100%;
-    }
-    #highscores thead h2 {
-      max-width: 100% !important;
-      line-height: 0;
+
+@media only screen and (max-device-width: 768px) {
+  .slide-out img, #credits-game-cover {
+    width: 100%;
+    height: auto;
+  }
+  #credits p {
+    width: 100%;
+  }
+  #highscores thead h2 {
+    max-width: 100% !important;
+    line-height: 0;
   }
   #info {
     font-size: 1rem;
@@ -832,7 +851,7 @@ padding: 0 1.1rem;
   }
   #highscore img {
     height: 1rem;
-    margin-top: -.2rem; 
+    margin-top: -.2rem;
   }
   #highscores-link {
     padding: 0 .5rem;
@@ -844,7 +863,6 @@ padding: 0 1.1rem;
   #fullscreen-link {
     display: block;
   }
-
 }
 
 

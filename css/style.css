@@ -520,6 +520,30 @@ td {
   text-decoration: none;
 }
 
+#fullscreen-link {
+      z-index: 1000;
+  position: fixed;
+    bottom: .2rem;
+    right: .2rem;
+    display: none; /* only visible on mobile */
+    height: 32px;
+}
+
+.fullscreen-toggle {
+  
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	background-image: url(../img/fullscreen_toogle.svg);
+	background-repeat: no-repeat;
+}
+.fullscreen-toggle {
+	background-position: 0px -32px;
+}
+.is-fullscreen .fullscreen-toggle {
+	background-position: 0px 0px;
+}
+
 #credits-link {
     text-align: right;
     background: #f5c855;
@@ -555,70 +579,6 @@ padding: 0 1.1rem;
     background: #00BCD4;
     width: 100%;
     color: white;
-}
-
-
-/* ==|== non-semantic helper classes ========================================
-   Please define your styles before this section.
-   ========================================================================== */
-
-
-/* For image replacement */
-
-.ir {
-  display: block;
-  border: 0;
-  text-indent: -999em;
-  overflow: hidden;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  text-align: left;
-  direction: ltr;
-}
-
-.ir br {
-  display: none;
-}
-
-
-/* Hide from both screenreaders and browsers: h5bp.com/u */
-
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-
-
-/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
-
-.visuallyhidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-
-/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
-
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-
-
-/* Hide visually and from screenreaders, but maintain layout */
-
-.invisible {
-  visibility: hidden;
 }
 
 /* Slide Outs */
@@ -795,6 +755,30 @@ padding: 0 1.1rem;
   color: #8a3ab9;
 }
 
+/* Overlays */
+.overlay {
+  display: none;
+}
+.overlay-container {
+  display: flex;
+}
+/* Gameover Overlay */
+#gameover-overlay {
+    position: fixed;
+    top: 67vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #987db3;
+}
+#gameover-overlay img {
+   height: 31vh;
+  margin: 1vh;
+}
+#gameover-overlay .gameover-lay-content {
+  color: white;
+}
+
 /* Forms */
 
 .error-messages {
@@ -826,11 +810,10 @@ padding: 0 1.1rem;
    ========================================================================== */
 
 /* Portrait */
-@media only screen 
-  and (min-device-width: 375px) 
-  and (max-device-width: 667px) 
+@media only screen and (min-device-width: 375px) and (max-device-width: 768px) 
   and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) { 
+  /*and (orientation: portrait)*/
+  { 
     .slide-out img,
     #credits-game-cover {
       width: 100%;
@@ -843,6 +826,25 @@ padding: 0 1.1rem;
       max-width: 100% !important;
       line-height: 0;
   }
+  #info {
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+  #highscore img {
+    height: 1rem;
+    margin-top: -.2rem; 
+  }
+  #highscores-link {
+    padding: 0 .5rem;
+  }
+  #credits-link {
+    padding: 0 .55rem;
+    margin-left: .25rem;
+  }
+  #fullscreen-link {
+    display: block;
+  }
+
 }
 
 

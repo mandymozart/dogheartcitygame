@@ -179,8 +179,21 @@
 </div>
 </div>
 <!--! end of #container -->
-<div id="message-center">
+<div class="overlay" id="gameover-overlay">
+	<div class="overlay-container">
+		<img src="http://jahtari.org/wp-content/uploads/2017/01/Dog_Heart_City_1.jpg">
+		<div class="overlay-content">
+			<h2>Order!</h2>
+			<a href="https://jahtari.bandcamp.com/album/dog-heart-city"
+						target="_blank">Jahtari Tape "Dog Heart
+				City"</a>
+		</div>
+	</div>
 </div>
+
+<a href="#/fullscreen" id="fullscreen-link"><span class="fullscreen-toggle"></span></a>
+
+
 <div id="info">
 	<a href="#/credits" id="credits-link">i</a>
 	<a href="#/highscores" id="highscores-link"><span id="highscore"><img src="/img/loader.svg" width="32" height="32" /></span></a>
@@ -244,23 +257,43 @@
 		/* Simple Page Functions and Facebook High Scores */
 		function initSlideOuts() {
 			$('#credits-link').click(function (e) {
-				$('body').addClass('show-credits');
+				body.addClass('show-credits');
 			});
 			$('#credits').click(function (e) {
-				$('body').removeClass('show-credits');
+				body.removeClass('show-credits');
 			});
 
 
 			$('#highscores-link').click(function (e) {
-				$('body').addClass('show-highscores');
+				body.addClass('show-highscores');
 			});
 			$('#highscores').click(function (e) {
-				$('body').removeClass('show-highscores');
+				body.removeClass('show-highscores');
 			});
+		}
+		
+		function initFullscreen() {
+			if (screenfull.enabled) {
+				$('.fullscreen-toggle').click(function (e) {
+					console.log(screenfull.isFullscreen)
+					e.preventDefault
+					if(screenfull.isFullscreen){
+						screenfull.exit()
+						body.removeClass('is-fullscreen')
+					}
+					else{
+						screenfull.request()
+						body.addClass('is-fullscreen')
+					}
+				})
+				
+			}
 		}
 
 		$(document).ready(function () {
+			body = $('body')
 			initSlideOuts()
+			initFullscreen()
 		})
 </script>
 <!-- Change UA-XXXXX-X to be your site's ID -->

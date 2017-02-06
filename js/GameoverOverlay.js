@@ -124,6 +124,7 @@ GameoverOverlay.prototype.show = function()
 	this.tryAgain.setInteractive(false);
 	this.tl.restart();
 	this.tl.play();
+	$('#gameover-overlay').fadeIn()
 }
 
 GameoverOverlay.prototype.onPlayAgainFaded = function()
@@ -139,11 +140,14 @@ GameoverOverlay.prototype.onPlayAgainFaded = function()
 
 GameoverOverlay.prototype.hide = function()
 {
+	
 	this.tryAgain.setInteractive(false);
 	this.tweet.visible = false;
 	this.facebook.visible = false;
 	this.tweet.hide();
 	this.facebook.hide();
+	$('#gameover-overlay').fadeOut()
+
 }
 
 GameoverOverlay.prototype.onTryAgainPressed = function()

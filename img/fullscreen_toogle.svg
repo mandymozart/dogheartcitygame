@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="32px" height="64px" viewBox="0 0 32 64"><g  transform="translate(0, 0)">
+<path fill="#f5f2f7" d="M8,12v8c0,0.553,0.447,1,1,1h14c0.553,0,1-0.447,1-1v-8c0-0.553-0.447-1-1-1H9C8.447,11,8,11.447,8,12z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M2,10H0V1c0-0.553,0.447-1,1-1h9v2H2V10z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M32,10h-2V2h-8V0h9c0.553,0,1,0.447,1,1V10z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M31,32h-9v-2h8v-8h2v9C32,31.553,31.553,32,31,32z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M10,32H1c-0.553,0-1-0.447-1-1v-9h2v8h8V32z"/>
+</g><g  transform="translate(0, 32)">
+<path fill="#f5f2f7" d="M5,6v20c0,0.553,0.447,1,1,1h20c0.553,0,1-0.447,1-1V6c0-0.553-0.447-1-1-1H6C5.447,5,5,5.447,5,6z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M2,10H0V1c0-0.553,0.447-1,1-1h9v2H2V10z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M32,10h-2V2h-8V0h9c0.553,0,1,0.447,1,1V10z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M31,32h-9v-2h8v-8h2v9C32,31.553,31.553,32,31,32z"/>
+<path data-color="color-2" fill="#f5f2f7" d="M10,32H1c-0.553,0-1-0.447-1-1v-9h2v8h8V32z"/>
+</g></svg>

@@ -129,8 +129,8 @@
 	<div class="slide-out-content">
 		<h2>WOW, <span id="submit-score"></span> POINTS!</h2>
 		<p><span id="submit-message"></span> Those of you that manage to stay in the highscores until
-			<span class="date">1st of March</span>, will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave
-			your nickname and email (only for us, not publicly visible) and we'll get back to you.</p>
+			<span class="date">1st of March</span>, will win a <span class="date">bundle of Jahtari goodies</span>. Simply leave your
+			nickname and email (only for us, not publicly visible) and we'll get back to you.</p>
 		<div class="form" id="submit-form">
 			<p class="error-messages"></p>
 			<h3>Your basics</h3>
@@ -188,7 +188,7 @@
 </div>
 
 <audio style="position: absolute" id="music" loop>
-	<source src="audio/dog-heart-city-medley.mp3">
+<source src="audio/dog-heart-city-medley.mp3">
 </audio>
 <!-- JavaScript at the bottom for fast page loading -->
 
@@ -242,21 +242,26 @@
 
 <script>
 		/* Simple Page Functions and Facebook High Scores */
-		$('#credits-link').click(function (e) {
-			$('body').addClass('show-credits');
-		});
-		$('#credits').click(function (e) {
-			$('body').removeClass('show-credits');
-		});
+		function initSlideOuts() {
+			$('#credits-link').click(function (e) {
+				$('body').addClass('show-credits');
+			});
+			$('#credits').click(function (e) {
+				$('body').removeClass('show-credits');
+			});
 
 
-		$('#highscores-link').click(function (e) {
-			$('body').addClass('show-highscores');
-		});
-		$('#highscores').click(function (e) {
-			$('body').removeClass('show-highscores');
-		});
+			$('#highscores-link').click(function (e) {
+				$('body').addClass('show-highscores');
+			});
+			$('#highscores').click(function (e) {
+				$('body').removeClass('show-highscores');
+			});
+		}
 
+		$(document).ready(function () {
+			initSlideOuts()
+		})
 </script>
 <!-- Change UA-XXXXX-X to be your site's ID -->
 

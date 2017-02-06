@@ -115,7 +115,7 @@ TitleScreen.prototype.onPlayPressed = function(data)
 
 TitleScreen.prototype.onHandFinished = function()
 {
-	var music = document.getElementById("music");
+	// var music = document.getElementById("music");
 	console.log(music);
 	music.play();
 	

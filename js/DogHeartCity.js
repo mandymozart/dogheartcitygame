@@ -37,8 +37,12 @@ var startup = new Startup();
 
 var highScores = new GAME.Highscores();
 
-var music = document.getElementById('music');
-music.playing = true;
+
+// var music = document.getElementById('music');
+music = new Audio('audio/dog-heart-city-medley.mp3')
+music.playing = true; // not native property of HTMLAudioElement
+music.loop = true; // loop
+music.autoplay = true;
 
 PIXI.Texture.addTextureToCache(PIXI.Texture.fromImage("img/sound_OFF.png"));
 PIXI.Texture.addTextureToCache(PIXI.Texture.fromImage("img/sound_ON.png"));
@@ -73,9 +77,13 @@ muteButton.mousedown = muteButton.touchstart = function (mouse) {
 }
 
 function initAudio() {
+	// mobile fix. this will play the audio stop and remove the listener
+	// hand will trigger the actual sound play back
+	console.log('initAudio')
 	music.addEventListener('play', function () {
 		// When the audio is ready to play, immediately pause.
 		music.pause();
+		console.log('inside addEventListener')
 		music.removeEventListener('play', arguments.callee, false);
 	})
 }

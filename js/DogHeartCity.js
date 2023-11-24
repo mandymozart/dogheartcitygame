@@ -79,13 +79,13 @@ muteButton.mousedown = muteButton.touchstart = function (mouse) {
 function initAudio() {
 	// mobile fix. this will play the audio stop and remove the listener
 	// hand will trigger the actual sound play back
-	// console.log('initAudio')
-	// music.addEventListener('play', function () {
-	// 	// When the audio is ready to play, immediately pause.
-	// 	music.pause();
-	// 	console.log('inside addEventListener')
-	// 	music.removeEventListener('play', arguments.callee, false);
-	// })
+	console.log('initAudio')
+	music.addEventListener('play', function () {
+		// When the audio is ready to play, immediately pause.
+		music.pause();
+		console.log('inside addEventListener')
+		music.removeEventListener('play', arguments.callee, false);
+	})
 }
 
 function onReady() {

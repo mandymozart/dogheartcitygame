@@ -1,5 +1,5 @@
 var API = {
-    'highscore' : 0,
+    'highscore': 0,
     'scores': [
         {
             'score': 25200,
@@ -52,7 +52,7 @@ API.getScores = function () {
 }
 
 API.saveScore = function (score) {
-    console.warn('API::saveScore',score)
+    console.warn('API::saveScore', score)
     console.warn('Saving deactivated in this demo.')
 }
 
@@ -63,7 +63,7 @@ API.getCSV = function (hash) {
 
 API.ConvertToCSV = function (object) {
     var csv = 'Rank,Score,Name,Email,Facebook,Twitter,Instagram\n'
-    i=0;
+    i = 0;
     $.each(object, function (k, score) {
         i++
         // console.log(score.name);
@@ -92,12 +92,11 @@ API.createDownloadLink = function (str) {
     }
 }
 
-
-/* Initialize */
-API.getScores();
-
 /* CSV download prompt */
 $(document).ready(function () {
+    /* Initialize */
+    API.getScores();
+
     if (window.location.hash == '#/9SVtIu8T83') {
         API.getCSV(window.location.hash)
     }

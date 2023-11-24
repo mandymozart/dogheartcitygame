@@ -75,24 +75,10 @@ GameoverOverlay = function()
 	var delay = 2//1//1;//0.1//0.1;
 	var fadeIn = 0.5;//0.5//0.1;
 	
-	
-
-	this.tweet = new GAME.TweetButton();
-	this.addChild(this.tweet)
-	this.tweet.position.x = 100;
-	this.tweet.position.y = GAME.height / 2;
-	
-	this.facebook = new GAME.FacebookButton();
-	this.addChild(this.facebook)
-	this.facebook.position.x = GAME.width - 100;
-	this.facebook.position.y = GAME.height / 2;
-	
-		
+			
 	this.tryAgain.alpha = 0;
 	this.submitButton.alpha = 0;
 	this.gameover.alpha = 0;
-	this.tweet.alpha = 0;
-	this.facebook.alpha = 0;
 	
 	this.tl = new TimelineLite();
 	//append a to() tween
@@ -102,10 +88,8 @@ GameoverOverlay = function()
 	this.tl.to(this.gameover, fadeIn, {alpha:1, ease:Sine.easeIn});
 	this.tl.to(this.gameover, fadeIn, {alpha:0, ease:Sine.easeOut, delay:delay});
 	
-	this.tl.to(this.facebook, fadeIn, {alpha:1, ease:Sine.easeIn}, 3);
 	this.tl.to(this.tryAgain, fadeIn, {alpha:1, ease:Sine.easeIn}, 3.2);
 	this.tl.to(this.submitButton, fadeIn, {alpha:1, ease:Sine.easeIn}, 3.4);
-	this.tl.to(this.tweet, fadeIn, {alpha:1, ease:Sine.easeIn}, 3.6);
 	
 	this.tl.call(this.onPlayAgainFaded.bind(this));
 	
@@ -118,8 +102,6 @@ GameoverOverlay.prototype = Object.create( PIXI.DisplayObjectContainer.prototype
 
 GameoverOverlay.prototype.show = function()
 {
-	this.tweet.visible = true;
-	this.facebook.visible = true;
 	this.gameover.visible = true;
 	this.tryAgain.setInteractive(false);
 	this.tl.restart();
@@ -142,10 +124,6 @@ GameoverOverlay.prototype.hide = function()
 {
 	
 	this.tryAgain.setInteractive(false);
-	this.tweet.visible = false;
-	this.facebook.visible = false;
-	this.tweet.hide();
-	this.facebook.hide();
 	$('#gameover-overlay').fadeOut()
 
 }
@@ -167,9 +145,6 @@ GameoverOverlay.prototype.onSubmitPressed = function()
 
 GameoverOverlay.prototype.resize = function(w, h)
 {
-	this.facebook.position.x = 245/2;
-	this.facebook.position.y = h/2 
-	
 	this.tryAgain.position.x = 245 + 268/2;
 	this.tryAgain.position.y = h/2 ;
 	
@@ -178,8 +153,5 @@ GameoverOverlay.prototype.resize = function(w, h)
 	
 	this.gameover.position.x = w/2;
 	this.gameover.position.y = h/2 - 20;
-	
-	this.tweet.position.x =  w - 245/2
-	this.tweet.position.y = h/2//GAME.height;
 	
 }

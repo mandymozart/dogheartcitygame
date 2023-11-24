@@ -145,3 +145,6 @@ GAME.Highscores.prototype.saveScore = function (scoreObject) {
 	$('body').addClass('show-highscores');
 
 }
+
+API.getScores();
+

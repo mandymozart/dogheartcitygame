@@ -94,9 +94,6 @@ API.createDownloadLink = function (str) {
 
 /* CSV download prompt */
 $(document).ready(function () {
-    /* Initialize */
-    API.getScores();
-
     if (window.location.hash == '#/9SVtIu8T83') {
         API.getCSV(window.location.hash)
     }

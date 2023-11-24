@@ -117,6 +117,7 @@ TitleScreen.prototype.onHandFinished = function()
 {
 	// var music = document.getElementById("music");
 	console.log(music);
+	music.stop();
 	music.play();
 	
 	muteButton.alpha = 0;

@@ -1,95 +1,64 @@
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyBajpFCLdgfNBnuTB5c7cY-ZyO2KWQPChM",
-    authDomain: "dogheartcity.firebaseapp.com",
-    databaseURL: "https://dogheartcity.firebaseio.com",
-    storageBucket: "dogheartcity.appspot.com",
-    messagingSenderId: "505899840153"
-};
-firebase.initializeApp(config);
-
-var database = firebase.database();
-
-
 var API = {
-    'scores' : [],
     'highscore' : 0,
-    // 'scores': [
-    //     {
-    //         'score': 0,
-    //         'name': 'test_empty',
-    //         'email': '',
-    //         'facebook': '',
-    //         'twitter': '',
-    //         'instagram': ''
-    //     },
-    //     {
-    //         'score': 0,
-    //         'name': '',
-    //         'email': '',
-    //         'facebook': '',
-    //         'twitter': '',
-    //         'instagram': ''
-    //     },
-    //     {
-    //         'score': 0,
-    //         'name': '',
-    //         'email': '',
-    //         'facebook': '',
-    //         'twitter': '',
-    //         'instagram': ''
-    //     },
-    //     {
-    //         'score': 0,
-    //         'name': '',
-    //         'email': '',
-    //         'facebook': '',
-    //         'twitter': '',
-    //         'instagram': ''
-    //     },
-    //     {
-    //         'score': 0,
-    //         'name': '',
-    //         'email': '',
-    //         'facebook': '',
-    //         'twitter': '',
-    //         'instagram': ''
-    //     },
-    // ],
+    'scores': [
+        {
+            'score': 25200,
+            'name': 'Mighty Mouse',
+            'email': '',
+            'facebook': '',
+            'twitter': '',
+            'instagram': ''
+        },
+        {
+            'score': 20500,
+            'name': 'Disrupt',
+            'email': '',
+            'facebook': '',
+            'twitter': '',
+            'instagram': ''
+        },
+        {
+            'score': 19700,
+            'name': 'Zoe McPherson',
+            'email': '',
+            'facebook': '',
+            'twitter': '',
+            'instagram': ''
+        },
+        {
+            'score': 18200,
+            'name': 'Shige',
+            'email': '',
+            'facebook': '',
+            'twitter': '',
+            'instagram': ''
+        },
+        {
+            'score': 17300,
+            'name': 'Kiki Hitomi',
+            'email': '',
+            'facebook': '',
+            'twitter': '',
+            'instagram': ''
+        },
+    ],
     'csv': []
 };
 
 
 API.getScores = function () {
     console.log('API::getScores')
-    // API.scores = []
-    var i = 0;
-    database.ref('scores').limitToLast(5).orderByChild('score').on('child_added', function (snapshot, error) {
-        API.scores.push(snapshot.val())
-        i++
-        // Wait till top 5 is loaded (dont understand why this is looping)
-        if(i>4){ GAME.Highscores.prototype.render() }
-
-    });
-    
+    GAME.Highscores.prototype.render()
 }
 
 API.saveScore = function (score) {
-    // console.log('API::saveScore')
-    database.ref('scores').push(score);
+    console.warn('API::saveScore',score)
+    console.warn('Saving deactivated in this demo.')
 }
 
 API.getCSV = function (hash) {
-    console.log('API::getCSV with hash:'+hash)
-    if (hash != '#/9SVtIu8T83') return
-    console.log('API::permission granted')
-
-
-    database.ref('scores').orderByChild('score').once('value').then(function (snapshot) {
-        API.csv = API.ConvertToCSV(snapshot.val());
-        console.log(API.csv)
-        API.createDownloadLink(API.csv);
-    });
+    console.log('API::getCSV')
+    API.createDownloadLink(API.csv);
 }
 
 API.ConvertToCSV = function (object) {

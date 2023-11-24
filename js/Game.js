@@ -163,7 +163,9 @@ GAME.Game.prototype.onShown = function () {
 }
 
 GAME.Game.prototype.start = function () {
-
+	this.setTexture(PIXI.TextureCache["img/sound_ON.png"])
+		music.playing = true;
+		music.play();
 }
 
 GAME.Game.prototype.gameover = function () {

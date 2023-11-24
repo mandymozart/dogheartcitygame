@@ -102,9 +102,8 @@ TitleScreen.prototype.onHidden = function()
 
 TitleScreen.prototype.onPlayPressed = function(data)
 {
-	//highScores.show()
-	//return;
-	//return;
+	music.playing = true;
+	music.play();
 	this.playButton.setInteractive(false);
 	setTimeout(this.onHandFinished.bind(this), 600)
 	//alert("!")
@@ -117,8 +116,6 @@ TitleScreen.prototype.onHandFinished = function()
 {
 	// var music = document.getElementById("music");
 	console.log(music);
-	music.pause();
-	music.play();
 	
 	muteButton.alpha = 0;
 	muteButton.visible = true;
